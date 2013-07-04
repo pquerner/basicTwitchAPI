@@ -2,7 +2,7 @@
 
 require_once('basicTwitch.php');
 if (empty($_GET["channel"])) {
-    $twitchChannel = 'taketv';
+    die("Please give me a channel name.");
 } elseif (is_string($_GET["channel"])) {
     $twitchChannel = strip_tags($_GET["channel"]);
 }
