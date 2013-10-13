@@ -1,8 +1,9 @@
 <?php
-
 require_once('basicTwitch.php');
 if (empty($_GET["channel"])) {
-    die("Please give me a channel name.");
+    echo("Please give me a channel name. You also can use a subfolder as channel name. eg. ");
+    echo("http://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']."?channel=airfrischung");
+    die();
 } elseif (is_string($_GET["channel"])) {
     $twitchChannel = strip_tags($_GET["channel"]);
 }
