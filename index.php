@@ -6,7 +6,7 @@ require_once('helper.php'); //Helper functions
 $url = $_SERVER["REQUEST_URI"];
 $url = explode("/", $url);
 $channel = $url[2];
-$mode = $url[3];
+@$mode = $url[3];
 
 $_conf["acceptedModes"] = Array(
     "basic", "all", "followers", "viewers",
