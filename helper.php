@@ -9,6 +9,16 @@ function object2array($obj) {
     return $arr;
 }
 
+function getCurrentPathWithHostName() {
+    $url = $_SERVER['REQUEST_URI'];
+    $parts = explode('/', $url);
+    $dir = $_SERVER['SERVER_NAME'];
+    for ($i = 0; $i < count($parts) - 1; $i++) {
+        $dir .= $parts[$i] . "/";
+    }
+    return $dir;
+}
+
 function httpOrHttps() {
     if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
         return "https://";
